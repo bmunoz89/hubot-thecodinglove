@@ -23,6 +23,7 @@ Then add **hubot-thecodinglove** to your `external-scripts.json`:
 ```
 user1>> hubot codinglove
 hubot>> Searching in thecodinglove...
+hubot>> How my boss thinks software development works…
 hubot>> http://tclhost.com/4UPe44O.gif
 ```
 
