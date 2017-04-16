@@ -1,0 +1,25 @@
+{
+    "author": "Boris <cmpx.89@gmail.com>",
+    "bugs": {
+        "url": "https://github.com/hubot-scripts/hubot-thecodinglove/issues"
+    },
+    "description": "Display meme from \"The coding love <http://thecodinglove.com>\"",
+    "homepage": "https://github.com/hubot-scripts/hubot-thecodinglove#readme",
+    "keywords": [
+        "hubot",
+        "hubot-scripts",
+        "thecodinglove",
+        "codinglove"
+    ],
+    "license": "MIT",
+    "main": "index.js",
+    "name": "hubot-thecodinglove",
+    "peerDependencies": {
+        "hubot": "2.x"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/hubot-scripts/hubot-thecodinglove.git"
+    },
+    "version": "0.0.1"
+}
