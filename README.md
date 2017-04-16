@@ -1,5 +1,6 @@
 [![npm version](https://badge.fury.io/js/hubot-thecodinglove.svg)](https://badge.fury.io/js/hubot-thecodinglove)
-[![NPM](https://nodei.co/npm/hubot-thecoding-love.png)](https://npmjs.org/package/hubot-thecoding-love)
+
+[![NPM](https://nodei.co/npm/hubot-thecodinglove.png)](https://npmjs.org/package/hubot-thecodinglove)
 
 # hubot-thecodinglove
 
