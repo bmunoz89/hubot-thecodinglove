@@ -1,10 +1,10 @@
 {
   "author": "Boris <cmpx.89@gmail.com>",
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-thecodinglove/issues"
+    "url": "https://github.com/bmunoz89/hubot-thecodinglove/issues"
   },
   "description": "Display meme from \"The coding love <http://thecodinglove.com>\"",
-  "homepage": "https://github.com/hubot-scripts/hubot-thecodinglove#readme",
+  "homepage": "https://github.com/bmunoz89/hubot-thecodinglove#readme",
   "keywords": [
     "hubot",
     "hubot-scripts",
@@ -16,7 +16,7 @@
   "name": "hubot-thecodinglove",
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-thecodinglove.git"
+    "url": "git://github.com/bmunoz89/hubot-thecodinglove.git"
   },
   "version": "0.0.2",
   "dependencies": {
