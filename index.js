@@ -54,7 +54,7 @@ module.exports = (robot) => {
                 if (error) {
                     robot.logger.error(`hubot-codinglove - error: ${error}`);
                     robot.emit('error', error, response);
-                } else {
+                } else if (response.statusCode == 200) {
                     const $ = cheerio.load(body);
 
                     const text = he.decode($('.post h3').first().text());
