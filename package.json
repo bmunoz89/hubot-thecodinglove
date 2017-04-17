@@ -22,5 +22,17 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "he": "^1.1.1"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "coffee-script": "^1.12.5",
+    "hubot": "^2.19.0",
+    "hubot-test-helper": "^1.5.1",
+    "mocha": "^2.5.3",
+    "nock": "^9.0.13"
+  },
+  "scripts": {
+    "test": "mocha",
+    "test-spec": "mocha --reporter spec"
   }
 }
