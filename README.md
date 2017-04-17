@@ -1,5 +1,7 @@
 [![npm version](https://badge.fury.io/js/hubot-thecodinglove.svg)](https://badge.fury.io/js/hubot-thecodinglove)
 [![Build Status](https://travis-ci.org/bmunoz89/hubot-thecodinglove.svg?branch=master)](https://travis-ci.org/bmunoz89/hubot-thecodinglove)
+[![dependency status](https://david-dm.org/bmunoz89/hubot-thecodinglove.svg)](https://david-dm.org/bmunoz89/hubot-thecodinglove)
+[![devDependency status](https://david-dm.org/bmunoz89/hubot-thecodinglove/dev-status.svg)](https://david-dm.org/bmunoz89/hubot-thecodinglove)
 
 [![NPM](https://nodei.co/npm/hubot-thecodinglove.png)](https://npmjs.org/package/hubot-thecodinglove)
 
