@@ -21,7 +21,8 @@
   "version": "0.0.4",
   "dependencies": {
     "cheerio": "^0.22.0",
-    "he": "^1.1.1"
+    "he": "^1.1.1",
+    "strformat": "0.0.7"
   },
   "devDependencies": {
     "chai": "^3.5.0",

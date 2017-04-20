@@ -28,10 +28,60 @@ Then add **hubot-thecodinglove** to your `external-scripts.json`:
 ## Sample Interaction
 
 ```
-user1>> hubot codinglove
+user>> hubot codinglove
 hubot>> Searching in thecodinglove...
 hubot>> How my boss thinks software development works…
 hubot>> http://tclhost.com/4UPe44O.gif
+```
+
+## Configuration
+
+Set environment variables like these examples below.
+
+Default:
+
+```bash
+export HUBOT_CODINGLOVE_SEARCH_TEXT="Searching text"
+export HUBOT_CODINGLOVE_ERROR_TEXT="thecodinglove.com"
+export HUBOT_CODINGLOVE_ERROR_IMG="http://tclhost.com/cn91mK3.gif"
+export HUBOT_CODING_LOVE_SUCCESS_TEMPLATE=">{text}\n{image_src}"
+export HUBOT_CODING_LOVE_ERROR_TEMPLATE=">{text}\n{image_src}"
+```
+
+Or if you want to disable the searching text message use:
+
+```bash
+export HUBOT_CODINGLOVE_SEARCH_TEXT="disabled"
+```
+
+```
+user>> hubot codinglove
+hubot>> How my boss thinks software development works…
+hubot>> http://tclhost.com/4UPe44O.gif
+```
+
+You can also customize texts:
+
+```bash
+export HUBOT_CODINGLOVE_SEARCH_TEXT="disabled"
+export HUBOT_CODINGLOVE_ERROR_TEXT="thecodinglove 💣😱"
+export HUBOT_CODINGLOVE_ERROR_IMG="don't show this message"
+export HUBOT_CODING_LOVE_ERROR_TEMPLATE="😧 {text}"
+```
+
+```
+user>> hubot codinglove
+hubot>> 😧 thecodinglove 💣😱
+```
+
+```bash
+export HUBOT_CODINGLOVE_SEARCH_TEXT="disabled"
+export HUBOT_CODING_LOVE_SUCCESS_TEMPLATE="codinglove: {text} {image_src}"
+```
+
+```
+user>> hubot codinglove
+hubot>> codinglove: How my boss thinks software development works… http://tclhost.com/4UPe44O.gif
 ```
 
 ## NPM Module

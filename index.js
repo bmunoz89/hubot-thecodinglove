@@ -18,22 +18,28 @@
 //   Based codinglove.coffee by Eunomie
 'use strict';
 
-const search_text = process.env.HUBOT_CODINGLOVE_SEARCH_TEXT || 'Searching in thecodinglove...',
-    error_text = process.env.HUBOT_CODINGLOVE_ERROR_TEXT || 'thecodinglove.com',
-    error_img = process.env.HUBOT_CODINGLOVE_ERROR_IMG || 'http://tclhost.com/cn91mK3.gif';
-
 const cheerio = {
         load: require('cheerio').load,
     },
     he = {
         decode: require('he').decode,
-    };
+    },
+    strformat = require('strformat');
+
+const search_text = process.env.HUBOT_CODINGLOVE_SEARCH_TEXT || 'Searching in thecodinglove...',
+    error_text = process.env.HUBOT_CODINGLOVE_ERROR_TEXT || 'thecodinglove.com',
+    error_img = process.env.HUBOT_CODINGLOVE_ERROR_IMG || 'http://tclhost.com/cn91mK3.gif',
+    success_template = process.env.HUBOT_CODING_LOVE_SUCCESS_TEMPLATE|| '>{text}\n{image_src}',
+    error_template = process.env.HUBOT_CODING_LOVE_ERROR_TEMPLATE || '{text}';
+
 
 module.exports = (robot) => {
     robot.respond(
         /codinglove/i,
         (msg) => {
-            msg.send(search_text);
+            if (!/^disabled$/i.test(search_text)) {
+                msg.send(search_text);
+            }
             robot.emit('codinglove', robot, msg, 'http://thecodinglove.com/random');
         }
     );
@@ -41,7 +47,8 @@ module.exports = (robot) => {
     robot.on('codinglove', (robot, message, url) => {
         message.http(url).get()((error, response, body) => {
             let txt = error_text,
-                img_src = error_img;
+                img_src = error_img,
+                template = error_template;
 
             try {
                 if (response.statusCode === 302 || response.statusCode === 301) {
@@ -65,11 +72,20 @@ module.exports = (robot) => {
 
                     txt = text;
                     img_src = image_src;
+                    template = success_template;
                 }
             } catch(err) {
                 robot.emit('error', err);
             }
-            message.send(`>${txt}\n${img_src}`);
+
+            const response_text = strformat(
+                template,
+                {
+                    text: txt,
+                    image_src: img_src,
+                }
+            );
+            message.send(response_text);
         });
     });
 };

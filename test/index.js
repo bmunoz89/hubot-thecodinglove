@@ -1,3 +1,4 @@
+'use strict';
 require('coffee-script/register');
 
 const Helper = require('hubot-test-helper'),
@@ -13,6 +14,9 @@ describe('hubot-thecodinglove', () => {
         process.env.HUBOT_CODINGLOVE_SEARCH_TEXT = 'Searching text';
         process.env.HUBOT_CODINGLOVE_ERROR_TEXT = 'Error text';
         process.env.HUBOT_CODINGLOVE_ERROR_IMG = 'Error img';
+        process.env.HUBOT_CODING_LOVE_SUCCESS_TEMPLATE = 'TEST: {text}\n{image_src}';
+        process.env.HUBOT_CODING_LOVE_ERROR_TEMPLATE = 'TEST: {text}\n{image_src}';
+
         room = helper.createRoom();
         nock.disableNetConnect();
     });
@@ -34,14 +38,17 @@ describe('hubot-thecodinglove', () => {
                 `);
         });
 
-        it('Call codinglove script', () => {
+        it('Call codinglove script', (done) => {
             room.user.say('user', 'hubot codinglove').then(() => {
                 expect(room.messages).to.have.length(3);
                 expect(room.messages).to.eql([
                     ['user', 'hubot codinglove'],
                     ['hubot', 'Searching text'],
-                    ['hubot', '>Title\nhttp://prefix.domain/image.gif'],
+                    ['hubot', 'TEST: Title\nhttp://prefix.domain/image.gif'],
                 ]);
+                done();
+            }).catch((err) => {
+                done(err);
             });
         });
     });
@@ -69,10 +76,12 @@ describe('hubot-thecodinglove', () => {
                     expect(room.messages).to.eql([
                         ['user', 'hubot codinglove'],
                         ['hubot', 'Searching text'],
-                        ['hubot', '>Title\nhttp://prefix.domain/image.gif'],
+                        ['hubot', 'TEST: Title\nhttp://prefix.domain/image.gif'],
                     ]);
                     done();
                 }, 10);
+            }).catch((err) => {
+                done(err);
             });
         });
     });
@@ -84,14 +93,17 @@ describe('hubot-thecodinglove', () => {
                 .reply(503, undefined);
         });
 
-        it('Call codinglove script', () => {
+        it('Call codinglove script', (done) => {
             room.user.say('user', 'hubot codinglove').then(() => {
                 expect(room.messages).to.have.length(3);
                 expect(room.messages).to.eql([
                     ['user', 'hubot codinglove'],
                     ['hubot', 'Searching text'],
-                    ['hubot', '>Error text\nError img'],
+                    ['hubot', 'TEST: Error text\nError img'],
                 ]);
+                done();
+            }).catch((err) => {
+                done(err);
             });
         });
     });
