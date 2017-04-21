@@ -36,6 +36,9 @@ const search_text = process.env.HUBOT_CODINGLOVE_SEARCH_TEXT || 'Searching in th
 module.exports = (robot) => {
     robot.respond(
         /codinglove/i,
+        {
+            id: 'codinglove',
+        },
         (msg) => {
             if (!/^disabled$/i.test(search_text)) {
                 msg.send(search_text);
