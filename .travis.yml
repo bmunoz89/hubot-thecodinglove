@@ -1,9 +1,11 @@
 language: node_js
 node_js:
-  - "6"
+- '6'
 sudo: false
 cache:
   directories:
-    - node_modules
+  - node_modules
 notifications:
   email: false
+  slack:
+    secure: g+cgFqb1Dii1NGRYB4Zcm93yonYglm75MYPA2kCz1oUAurAI5kiX41a8q4o9fyqAIgcdsZZdd38uJoTCQkfIGNA03nGEvsc+jopjKn1f7YyTKYmWQziJ9LEAP+pzX8QIL9TWKHmVzkLXy5Zc9rsFUXjphtoiNuBtgk9pHW/BoF4Ny0NodCDNyGvTh27TejeRxvMZ7TAKTXZNK1IPuboOqh+r/Z9Si+sA575iGArxhDCNG2qf4EPlF3nf3EZjwJtpr7a2tDpP9yl7jgOoqwJLXlsH37DEVq/RPGRZzzQmKAGsqir+YyGfhnxU6STCbzorP01HCGzW2NgIg7eQ7TZ/jss78LmhPkBGjxAQ6airHrbEePIkFg0dOTESUmuoJ/5RXCZGWKMYn1nJubEo/tmumvJ4gb8zpDWTyfJifUWzaeW89QYMRdg0qBL8KuDzfVaQdXNPRnnC72001pIfZgH6+fs9DnCPPYQfQ+f6gZv+TRkmBTVkXyneYbLTjT5+ROVAbf5aKz7wkxlWVHzyDiRAVXR3ai9/g8pjMiGT8y+D2+wCDCQBadpu/UBQ+4OUOFE/hOny8TG7UgTjb/2LGFmg5e57aZgJvR2tD/dmhPOFI5PbEvGCGAbGKiT04tNB4T1qVh0ut6xz/quaacGjVle+hhXfe1uTWFUJKswTqTgGtfk=

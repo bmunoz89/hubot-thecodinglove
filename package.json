@@ -7,9 +7,11 @@
   "homepage": "https://github.com/bmunoz89/hubot-thecodinglove#readme",
   "keywords": [
     "hubot",
+    "hubot-script",
     "hubot-scripts",
     "thecodinglove",
-    "codinglove"
+    "codinglove",
+    "meme"
   ],
   "license": "MIT",
   "main": "index.js",
